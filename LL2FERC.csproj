@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Ichihai1415/LL2FERC</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://Ichihai1415.github.io/programs/LL2FERC/</PackageProjectUrl>
+    <Copyright>© 2023 Ichihai1415</Copyright>
+    <Company>Ichihai1415</Company>
+    <Authors>Ichihai1415</Authors>
+    <Title>LL2FERC</Title>
+    <RepositoryType>git</RepositoryType>
+    <Description>緯度経度からFlinn-Engdahl regions codeを返します。</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
