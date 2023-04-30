@@ -1,5 +1,6 @@
 # LatLonToFlinnEngdahlRegionsCode
 ![Nuget](https://img.shields.io/nuget/v/LL2FERC)
+![Nuget](https://img.shields.io/nuget/dt/LL2FERC)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Ichihai1415/LL2FERC)
 ![GitHub Release Date](https://img.shields.io/github/release-date/Ichihai1415/LL2FERC)
 ![GitHub issues](https://img.shields.io/github/issues/Ichihai1415/LL2FERC)
