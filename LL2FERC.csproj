@@ -13,6 +13,11 @@
     <Title>LL2FERC</Title>
     <RepositoryType>git</RepositoryType>
     <Description>緯度経度からFlinn-Engdahl regions codeを返します。</Description>
+    <PackageTags>Flinn-Engdahl regions</PackageTags>
+    <PackageReleaseNotes>コードから名称(日本語・英語)の変換を追加</PackageReleaseNotes>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
