@@ -5,17 +5,19 @@
 ![GitHub Release Date](https://img.shields.io/github/release-date/Ichihai1415/LL2FERC)
 ![GitHub issues](https://img.shields.io/github/issues/Ichihai1415/LL2FERC)
 
-緯度と経度からF-E regions code、F-E regions codeから日本語名称・英語名称への変換ができます。
+緯度と経度からFlinn-Engdahl regions code、Flinn-Engdahl regions codeから日本語名称・英語名称への変換ができます。<br>
+お知らせ:コードは英語で書かれていますが、READMEは日本語で書かれています。
 
-This library can convert from latitude and longitude to F-E region codes, and from F-E region codes to Japanese and English names.
+This library can convert from latitude and longitude to Flinn-Engdahl region codes, and from Flinn-Engdahl region codes to Japanese and English names.<br>
+Notice: The code is written in English, but the README is written in Japanese.
 
 # データ
 
-コード:[USGS Geoserve Regions Endpoint](https://earthquake.usgs.gov/ws/geoserve/regions.php) 取得:2023/04/29~4/30
+コード:[USGS Geoserve Regions Endpoint](https://earthquake.usgs.gov/ws/geoserve/regions.php)  取得:2023/04/29~4/30
 
-日本語名称:[気象庁防災情報XMLフォーマット　技術資料　個別コード表](http://xml.kishou.go.jp/tec_material.html) 取得ファイル:20221118
+日本語名称:[気象庁防災情報XMLフォーマット　技術資料　個別コード表](http://xml.kishou.go.jp/tec_material.html)  取得ファイル:20221118
 
-英語名称:[Wikipedia - "Flinn-Engdahl regionalization"](https://en.wikipedia.org/wiki/Flinn-Engdahl_regionalization) 閲覧:2023/05/10
+英語名称:[Wikipedia - "Flinn-Engdahl regionalization"](https://en.wikipedia.org/wiki/Flinn-Engdahl_regionalization)  閲覧:2023/05/10
 
 # インストール
 
@@ -26,23 +28,42 @@ This library can convert from latitude and longitude to F-E region codes, and fr
 - \> `dotnet add package LL2FERC`
 
 # 使い方
+(確認してないので動かないかもしれません)
 ```c#
 //using LL2FERC;
 
-int code = LL2FERCode.Code(Lat, Lon);
+int code = LL2FERCode.Code(Lat, Lon);//コード
 
-string Name_JP = LL2FERCode.Name_JP(code);
+string NameJP = LL2FERCode.NameJP(code);//日本語名称
+string NameEN = LL2FERCode.NameEN(code);//英語名称
 
-string Name_EN = LL2FERCode.Name_EN(code);
+
+//以下は元データリスト(上のコードで内部使用しているもの、readonly)のコピーの例(参照でも値を変えないなら問題ない)
+
+int[,] codes = (int[,])LL2FERCode.codes.Clone();//元のコード一覧　
+
+Dictionary<int, string> nameListJP = new Dictionary<int, string>(LL2FERCode.nameListJP);//日本語名称一覧
+Dictionary<int, string> nameListEN = new Dictionary<int, string>(LL2FERCode.nameListEN);//英語名称一覧
 ```
 
+# その他
+- [レポジトリ](https://github.com/Ichihai1415/LL2FERC/blob/release/codes.csv)にcsvデータがあります。
+- 間違っているところ等あればissuesやDMなどで連絡してください。
+
 # 更新履歴
+## v1.1.1
+2023/09/30
+
+- **変数名・メゾット名等を調整しました。確認してください。**
+- コードから日本語名称の変換を、気象庁と同じ文字に(以前までは半角化などをしていた)
+- 変数名等コード・READMEの調整、コメント等の英文化
+
 ## v1.1.0
 2023/05/10
 
-コードから名称(日本語・英語)の変換を追加
+- コードから名称(日本語・英語)の変換を追加
 
 ## v1.0.0
 2023/04/30
 
-緯度経度からコードへの変換を追加
+- 緯度経度からコードへの変換を追加

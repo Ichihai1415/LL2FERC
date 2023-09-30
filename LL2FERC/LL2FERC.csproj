@@ -12,12 +12,22 @@
     <Authors>Ichihai1415</Authors>
     <Title>LL2FERC</Title>
     <RepositoryType>git</RepositoryType>
-    <Description>緯度経度からFlinn-Engdahl regions codeを返します。</Description>
+    <Description>This library can convert from latitude and longitude to Flinn-Engdahl region codes, and from Flinn-Engdahl region codes to Japanese and English names.</Description>
     <PackageTags>Flinn-Engdahl regions</PackageTags>
-    <PackageReleaseNotes>コードから名称(日本語・英語)の変換を追加</PackageReleaseNotes>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
-    <Version>1.1.0</Version>
+    <PackageReleaseNotes>v1.1.1
+コードから日本語名称の変換を、気象庁と同じ文字に
+変数名等コード・READMEの調整、コメント等の英文化</PackageReleaseNotes>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
+    <Version>1.1.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
