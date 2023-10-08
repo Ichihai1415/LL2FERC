@@ -3,7 +3,10 @@ using System.Collections.Generic;
 
 namespace LL2FERC
 {
-    public class LL2FERCode
+    /// <summary>
+    /// The class that performs conversions.
+    /// </summary>
+    public class LL2FERC
     {
         /// <summary>
         /// Returns the Flinn-Engdahl regions code from latitude and longitude.
@@ -20,7 +23,7 @@ namespace LL2FERC
                 throw new ArgumentOutOfRangeException($"The specified argument \"lon\" is not in the valid range of values. ({lon})");
             int latIndex = (int)Math.Floor(90 - lat);
             int lonIndex = (int)Math.Floor(180 + lon);
-            return codes[latIndex, lonIndex];
+            return LL2FERCdatas.codes[latIndex, lonIndex];
         }
 
         /// <summary>
@@ -31,11 +34,21 @@ namespace LL2FERC
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public static string NameJP(int code)
         {
-            int[,] c = (int[,])codes.Clone();
-            c[0, 0] = 0;
             if (code < 1 || code > 757)
                 throw new ArgumentOutOfRangeException($"The specified argument \"code\" is not in the valid range of values. ({code})");
-            return nameListJP[code];
+            return LL2FERCdatas.nameListJP[code];
+        }
+
+        /// <summary>
+        /// Returns the Japanese name from latitude and longitude.
+        /// </summary>
+        /// <param name="lat">latitude</param>
+        /// <param name="lon">longitude</param>
+        /// <returns>Japanese name corresponding to Flinn-Engdahl regions code</returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public static string NameJP(double lat, double lon)
+        {
+            return LL2FERCdatas.nameListJP[Code(lat, lon)];
         }
 
         /// <summary>
@@ -48,9 +61,27 @@ namespace LL2FERC
         {
             if (code < 1 || code > 757)
                 throw new ArgumentOutOfRangeException($"The specified argument \"code\" is not in the valid range of values. ({code})");
-            return nameListEN[code];
+            return LL2FERCdatas.nameListEN[code];
         }
 
+        /// <summary>
+        /// Returns the English name from the Flinn-Engdahl regions code.
+        /// </summary>
+        /// <param name="lat">latitude</param>
+        /// <param name="lon">longitude</param>
+        /// <returns>English name corresponding to Flinn-Engdahl regions code</returns>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        public static string NameEN(double lat, double lon)
+        {
+            return LL2FERCdatas.nameListEN[Code(lat, lon)];
+        }
+    }
+
+    /// <summary>
+    /// The class of the source data for the conversion.
+    /// </summary>
+    public class LL2FERCdatas
+    {
         /// <summary>
         /// List of codes for each degree of latitude and longitude. [latitude, longitude]
         /// </summary>

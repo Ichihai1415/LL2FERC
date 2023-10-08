@@ -28,22 +28,34 @@ Notice: The code is written in English, but the README is written in Japanese.
 - \> `dotnet add package LL2FERC`
 
 # 使い方
-(確認してないので動かないかもしれません)
+(一部確認してないので動かないかもしれません)
 ```c#
 //using LL2FERC;
 
-int code = LL2FERCode.Code(Lat, Lon);//コード
+double lat = 35;
+double lon = 135;
 
-string NameJP = LL2FERCode.NameJP(code);//日本語名称
-string NameEN = LL2FERCode.NameEN(code);//英語名称
+int code = LL2FERC.Code(lat, lon);//コード
 
+//コード->名称
+string nameJP = LL2FERC.NameJP(code);//日本語名称
+string nameEN = LL2FERC.NameEN(code);//英語名称
 
-//以下は元データリスト(上のコードで内部使用しているもの、readonly)のコピーの例(参照でも値を変えないなら問題ない)
+//緯度経度->名称
+string nameJP = LL2FERC.NameJP(lat, lon);//日本語名称
+string nameEN = LL2FERC.NameEN(lat, lon);//英語名称
+```
 
-int[,] codes = (int[,])LL2FERCode.codes.Clone();//元のコード一覧　
+`using static LL2FERC.LL2FERC;`とすることで以下のように省略できます。
+```c#
+int code = Code(lat, lon);//コード
+```
 
-Dictionary<int, string> nameListJP = new Dictionary<int, string>(LL2FERCode.nameListJP);//日本語名称一覧
-Dictionary<int, string> nameListEN = new Dictionary<int, string>(LL2FERCode.nameListEN);//英語名称一覧
+元データリスト(上のコードで内部使用しているもの、readonly)のコピーの例(値を変えないなら参照でも可)(```using static LL2FERC.LL2FERCdatas```で省略)
+```c#
+int[,] codes = (int[,])LL2FERCdatas.codes.Clone();//元のコード一覧　
+Dictionary<int, string> nameListJP = new Dictionary<int, string>(LL2FERCdatas.nameListJP);//日本語名称一覧
+Dictionary<int, string> nameListEN = new Dictionary<int, string>(LL2FERCdatas.nameListEN);//英語名称一覧
 ```
 
 # その他
@@ -51,10 +63,16 @@ Dictionary<int, string> nameListEN = new Dictionary<int, string>(LL2FERCode.name
 - 間違っているところ等あればissuesやDMなどで連絡してください。
 
 # 更新履歴
+## v1.2.0
+2023/10/08
+
+- **クラス名を変更しました。確認してください。**
+- 緯度経度から名称(日本語・英語)の変換を追加
+
 ## v1.1.1
 2023/09/30
 
-- **変数名・メゾット名等を調整しました。確認してください。**
+- **変数名・メゾット名等を変更しました。確認してください。**
 - コードから日本語名称の変換を、気象庁と同じ文字に(以前までは半角化などをしていた)
 - 変数名等コード・READMEの調整、コメント等の英文化
 
