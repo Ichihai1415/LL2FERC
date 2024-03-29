@@ -64,7 +64,7 @@ var nameList_en = new Dictionary<int, string>(LL2FERC.Datas.NameList_enUS);//英
 ### ファイルから読み込む
 ```c#
 var ff = new LL2FERC.FromFile("namelist_xx.csv");//namelist_ja.csvから名称リストを読み込みます。指定しない場合LL2FERC.FromFile.csvが読み込まれます(同梱していません)。
-string name_xx = _ff.GetName_File(code));
+string name_xx = ff.GetName_File(code));
 ```
 csvファイルの形式は以下です(レポジトリにある`namelist_{language}.csv`と同じ)。
 ```csv

@@ -100,7 +100,7 @@ namespace LL2FERC
             public FromFile(string path)
             {
                 if (!File.Exists(path))
-                    throw new FileNotFoundException("Place LL2FERC.FromFile.csv in the same directory as LL2FERC.dll. Check NuGet or GitHub detail page for more information.", path);
+                    throw new FileNotFoundException("Place name data file in the same directory as LL2FERC.dll. Check NuGet or GitHub detail page for more information.", path);
 
                 try
                 {
