@@ -14,13 +14,15 @@
     <RepositoryType>git</RepositoryType>
     <Description>This library can convert from latitude and longitude to Flinn-Engdahl region codes, and from latitude and longitude or Flinn-Engdahl region codes to Japanese and English names.</Description>
     <PackageTags>Flinn-Engdahl-regions,geography</PackageTags>
-    <PackageReleaseNotes>v1.2.0
-緯度経度から名称(日本語・英語)の変換を追加
-クラス名を変更、データを分離
-プロパティを調整</PackageReleaseNotes>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <FileVersion>1.2.0.0</FileVersion>
-    <Version>1.2.0</Version>
+    <PackageReleaseNotes>v1.3.0
+- **構造・変数名・メソッド名等を変更しました。確認してください。**
+- ソースファイルを分割
+- 英語名称のハイフン部分が?になっていたので修正
+- ファイルを読み込んで言語を追加できるように
+- 変更に伴いREADMEの修正、追加</PackageReleaseNotes>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <FileVersion>1.3.0.0</FileVersion>
+    <Version>1.3.0</Version>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
