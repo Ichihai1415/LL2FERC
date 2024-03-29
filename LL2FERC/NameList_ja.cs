@@ -9,7 +9,7 @@ namespace LL2FERC
             /// <summary>
             /// List of Japanese names. [code, Japanese name]
             /// </summary>
-            /// <remarks>source: JMA Disaster Prevention Information XML Format Technical Data</remarks>
+            /// <remarks>source: JMA Disaster Prevention Information XML Format Technical Data<br/><see href="http://xml.kishou.go.jp/tec_material.html"/></remarks>
             public static readonly Dictionary<int, string> NameList_ja = new Dictionary<int, string>
             {
                 {   1, "米国、アラスカ州中央部" },

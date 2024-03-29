@@ -33,6 +33,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NameList.temp.cs.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="NameList.temp.cs.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

@@ -1,0 +1,21 @@
+﻿using System.Collections.Generic;
+
+namespace LL2FERC
+{
+    //Copy this file and attach the language code (example: ja, en-US)
+
+    public partial class LL2FERC
+    {
+        public partial class Datas
+        {
+            /// <summary>
+            /// List of (language) names. [code, (language) name]
+            /// </summary>
+            /// <remarks>source: (source)<br/><see href="(link)"/></remarks>
+            public static readonly Dictionary<int, string> NameList_template = new Dictionary<int, string>
+            {
+
+            };
+        }
+    }
+}
