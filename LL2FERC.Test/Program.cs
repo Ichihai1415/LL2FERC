@@ -13,6 +13,10 @@
             while (true)
             {
                 var enter = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(enter))
+                {
+                    continue;
+                }
                 var enters = enter.Split(',');
                 if (enters.Length == 2)
                 {
