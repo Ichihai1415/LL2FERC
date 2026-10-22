@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "LL2FERC": {
+      "commandName": "Project"
+    },
+    "プロファイル 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\proje\\source\\repos\\LL2FERC\\LL2FERC.Test\\bin\\Debug\\net10.0\\LL2FERC.Test.exe"
+    }
+  }
+}
