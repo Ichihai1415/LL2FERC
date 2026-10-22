@@ -5,10 +5,10 @@
         static void Main(string[] args)
         {
 
-            var ff = new LL2FERC.FromFile("namelist_ja.csv");
-            Console.WriteLine(ff.GetName_File(35.5, 136.5));
-            var ff2 = new LL2FERC.FromFile("namelist_en-US.csv");
-            Console.WriteLine(ff2.GetName_File(295));
+            //var ff = new LL2FERC.FromFile("namelist_ja.csv");
+            //Console.WriteLine(ff.GetName_File(35.5, 136.5));
+            //var ff2 = new LL2FERC.FromFile("namelist_en-US.csv");
+            //Console.WriteLine(ff2.GetName_File(295));
             Console.WriteLine();
             while (true)
             {
